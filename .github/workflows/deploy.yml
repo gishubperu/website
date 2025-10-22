@@ -22,7 +22,7 @@ jobs:
           npm run build
       - name: Debug - Show built files
         run: |
-          cat dist/index.html | head -10
+          cat dist/index.html | head -50
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
