@@ -20,7 +20,12 @@ jobs:
         run: |
           npm install
           npm run build
-          
+      - name: Debug - Show built files
+        run: |
+          echo "=== ESTRUCTURA DE dist/ ==="
+          find dist/ -type f -name "*.html" -o -name "*.js" -o -name "*.css" | head -20
+          echo "=== CONTENIDO DE index.html ==="
+          cat dist/index.html | head -10
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
